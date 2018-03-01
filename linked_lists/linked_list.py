@@ -26,7 +26,6 @@ class LinkedList(object):
         current_node.next = new_node
 
     def find(self, data):
-
         if self.is_empty():
             return None
 
@@ -37,7 +36,6 @@ class LinkedList(object):
                 return current_node
             
             current_node = current_node.next
-            
         return None
 
     def is_empty(self):
