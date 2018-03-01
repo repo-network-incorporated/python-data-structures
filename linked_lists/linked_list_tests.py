@@ -36,6 +36,22 @@ class LinkedListTests(unittest.TestCase):
         list.append("Second")
         self.assertEqual(list.head.next.data, "Second")
 
+    def test_find_on_empty_list_should_return_none(self):
+        list = LinkedList()
+        
+        self.assertIsNone(list.find("First"))
+
+    def test_find_should_match_valid_node_in_one_value_list(self):
+        list = LinkedList()
+        list.append("First")
+        self.assertIsNotNone(list.find("First"))
+
+    def test_find_should_match_valid_node_in_multi_value_list(self):
+        list = LinkedList()
+        list.append("First")
+        list.append("Second")
+        self.assertIsNotNone(list.find("Second"))
+
     def test_is_empty_should_be_true_if_no_head(self):
         list = LinkedList()
         self.assertTrue(list.is_empty())

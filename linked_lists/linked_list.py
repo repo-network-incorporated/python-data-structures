@@ -14,7 +14,7 @@ class LinkedList(object):
     def append(self, data):
         new_node = Node(data)
         
-        if self.head is None:
+        if self.is_empty():
             self.head = new_node
             return
         
@@ -24,6 +24,21 @@ class LinkedList(object):
             current_node = current_node.next
 
         current_node.next = new_node
+
+    def find(self, data):
+
+        if self.is_empty():
+            return None
+
+        current_node = self.head
+
+        while current_node is not None:
+            if current_node.data == data:
+                return current_node
+            
+            current_node = current_node.next
+            
+        return None
 
     def is_empty(self):
         return self.head == None
