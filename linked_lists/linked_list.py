@@ -25,6 +25,5 @@ class LinkedList(object):
 
         current_node.next = new_node
 
-
     def is_empty(self):
         return self.head == None
